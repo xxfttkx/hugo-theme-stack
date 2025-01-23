@@ -1,0 +1,33 @@
+{{- $defaultShowDiary := default "true" .Site.Params.showDiary.default -}}
+{{- if not (default true .Site.Params.showDiary.toggle) -}}
+    {{/* If toggle is disabled, force default scheme */}}
+    <script>
+        (function() {
+            const showDiaryKey = 'showDiary';
+            localStorage.setItem(showDiaryKey, "{{ $defaultShowDiary }}");
+        })();
+    </script>
+{{- else -}}
+    {{/* Otherwise set to default scheme only if no preference is set by user */}}
+    <script>
+        (function() {
+            const showDiaryKey = 'showDiary';
+            if(!localStorage.getItem(showDiaryKey)){
+                localStorage.setItem(showDiaryKey, "{{ $defaultShowDiary }}");
+            }
+        })();
+    </script>
+{{- end -}}
+
+<script>
+    (function() {
+        const showDiaryKey = 'showDiary';
+        const showDiaryItem = localStorage.getItem(showDiaryKey);
+
+        if (showDiaryItem == 'true') {
+            document.documentElement.dataset.diary = 'true';
+        } else {
+            document.documentElement.dataset.diary = 'false';
+        }
+    })();
+</script>

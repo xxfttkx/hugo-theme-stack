@@ -4,6 +4,9 @@ toggleMenu:
 darkMode:
     other: 暗色模式
 
+show_diary:
+    other: show diary
+
 list:
     page: "{{ .Count }} 个页面"
 

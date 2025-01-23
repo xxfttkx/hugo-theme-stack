@@ -28,6 +28,7 @@ class StackColorScheme {
 
     private bindClick(toggleEl: HTMLElement) {
         toggleEl.addEventListener('click', (e) => {
+            // console.log("change color scheme");
             if (this.isDark()) {
                 /// Disable dark mode
                 this.currentScheme = 'light';

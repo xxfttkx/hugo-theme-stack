@@ -97,6 +97,14 @@
                         <span>{{ T "darkMode" }}</span>
                     </li>
                 {{ end }}
+
+                {{ if (default true .Site.Params.showDiary.toggle) }}
+                    <li id="show-diary-toggle">
+                        {{ partial "helper/icon" "toggle-left" }}
+                        {{ partial "helper/icon" "toggle-right" }}
+                        <span>{{ T "show_diary" }}</span>
+                    </li>
+                {{ end }}
             </ol>
         </li>
     </ol>

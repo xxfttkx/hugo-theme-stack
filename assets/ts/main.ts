@@ -12,6 +12,7 @@ import createElement from 'ts/createElement';
 import StackColorScheme from 'ts/colorScheme';
 import { setupScrollspy } from 'ts/scrollspy';
 import { setupSmoothAnchors } from "ts/smoothAnchors";
+import ShowDiary from "./showDiary";
 
 let Stack = {
     init: () => {
@@ -92,6 +93,7 @@ let Stack = {
         });
 
         new StackColorScheme(document.getElementById('dark-mode-toggle'));
+        new ShowDiary(document.getElementById('show-diary-toggle'));
     }
 }
 
