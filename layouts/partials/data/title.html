@@ -5,7 +5,7 @@
     <!-- Homepage, and it's pagination -->
 
     <!-- Build paginator -->
-    {{ $showDiary := .Site.Params.showDiary.toggle | default false }} 
+    {{ $showDiary := .Site.Params.showDiary.default | default false }} 
     {{ $pages := where .Site.RegularPages "Section" "in" .Site.Params.mainSections }}
     {{ $notHidden := where $pages "Params.hidden" "!=" true }}
     {{ $notHiddenInHome := where $notHidden "Params.hiddenInHome" "!=" true }}
