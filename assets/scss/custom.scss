@@ -1,1 +1,5 @@
 /* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+.menu-social {
+  flex-wrap: wrap !important;
+  row-gap: 0.5rem;
+}
